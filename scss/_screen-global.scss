@@ -1,0 +1,84 @@
+/* SCSS Document */
+
+// Only for  header icons
+$screen-xss-max: 380px;
+
+// Only for  mobile screen below 450
+$screen-cusxs-max: 450px;
+
+// Only for  mobile screen below 480
+$screen-xsm-max: 480px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+ 
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+ 
+// Tablets and small desktops
+$screen-lg-max: 991.5px;
+
+
+// Large tablets and desktops
+$screen-xld-min: 1367px;
+
+
+
+//---------------------------------------- Mixin Function ------------------------//
+
+// Small mobile devices Custom
+@mixin xsm {
+   @media (max-width: #{$screen-xsm-max}) {
+       @content;
+   }
+}
+
+// Small mobile devices Custom below 450
+@mixin cusxsm {
+   @media (max-width: #{$screen-cusxs-max}) {
+       @content;
+   }
+}
+
+// Small devices Custom
+@mixin xss {
+   @media (max-width: #{$screen-xss-max}) {
+       @content;
+   }
+}
+ 
+// Small devices
+@mixin sm {
+   @media (max-width: #{$screen-sm-max}) {
+       @content; 
+   }
+}
+ 
+// Medium devices
+@mixin md {
+   @media (max-width: #{$screen-md-max}) {
+       @content;
+   }
+}
+
+ 
+// Large devices
+@mixin lg {
+   @media (max-width: #{$screen-lg-max}) {
+       @content;
+   }
+}
+
+
+// Custom Extra large devices above 1366
+@mixin xld {
+   @media (min-width: #{$screen-xld-min}) {
+       @content; 
+   }
+}
+
+
+
+
+
+

@@ -1,0 +1,1141 @@
+/* Scss Document */
+
+@import 'brand';
+@import 'screen-global';
+
+* {
+    transition: all 0.3s ease 0s;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100%;
+    margin: 0px;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*---browser Scrollbar css beginning here */
+
+
+/* Works on Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: lightgray white;
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-moz-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* *::-webkit-scrollbar-track {
+    background: white;
+}
+
+*::-moz-scrollbar-track {
+    background: white;
+} */
+
+*::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 20px;
+    /* border: 3px solid white; */
+}
+
+*::-moz-scrollbar-thumb {
+    background-color: lightgray;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    /* border: 3px solid white; */
+}
+
+
+/*---browser Scrollbar css end here */
+
+
+
+body {
+    background: $white-color;
+    font-family: $font-open-sans;
+    font-size: 16px;
+    color: $secondary-color;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*-----------header css beginning here ----------*/
+header {
+    width: 100%; 
+    background: $white-color;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 30;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    padding: 0 5%;
+}
+
+.headerFixed {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.container-header {
+    width: 100%;    
+    margin: 0 auto;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #e0e0e0;
+    padding: 3px 0;
+
+    @include sm {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.contact-info {
+    font-size: 14px;
+
+    i {
+        color: $primary-color;
+    }
+
+    a {
+        color: $black-color;
+
+        &:hover {
+            text-decoration: none;
+            opacity: .5;
+        }
+    }
+
+    @include sm {
+        margin-bottom: 2px;
+    }
+}
+
+.social-icon {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        li {
+            margin: 0;
+            padding: 0;
+            margin-left: 8px;
+
+            a {
+                font-size: 16px;
+                line-height: 14px;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include md {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &:hover {
+                    opacity: .5;
+                    text-decoration: none;
+                }
+
+                i {
+                    color: $primary-color;
+                }
+            }
+
+            /*a.facebook{
+            background:$black-color;
+            border-radius: 30px;
+                i{
+                    color:$white-color;                   
+                }
+                &:hover{
+                    opacity:.5;
+                }
+        }*/
+        }
+
+    }
+
+}
+
+.slider-wrapper .carousel-caption {
+    background: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    z-index: 8;
+}
+
+.slider-wrapper .carousel-caption p,
+.slider-wrapper .carousel-caption h5 {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.header-flex {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include sm {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+
+    @include lg {
+        width: 30%;
+    }
+
+    @include md {
+        width: 45%;
+    }
+
+    @include sm {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.navigation {
+    margin: 0;
+    padding: 0;
+
+    @include lg {
+        width: 50%;
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 5px 0;
+    }
+
+    li.nav-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    a.nav-link {
+        font-size: 18px;
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+        border-bottom: solid 3px $white-color;
+
+        &:hover {
+            color: $primary-color !important;
+            border-bottom: solid 3px $primary-color;
+
+        }
+    }
+
+    a.active {
+        color: $primary-color !important;
+        border-bottom: solid 3px $primary-color;
+    }
+
+    button.navbar-toggler {
+        border: 0;
+        color: $primary-color;
+
+        &:hover {
+            background: rgba(0, 0, 0, .10);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: inherit;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        @include sm {
+            margin: 0 auto;
+        }
+    }
+
+    @include sm {
+        .navbar-brand {
+            display: none;
+        }
+
+    }
+
+    .navbar-nav .trackItem {
+        margin-right: 0;
+
+        @include lg {
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .navbar-nav .btn-track {
+        background: $primary-color;    
+        border-radius: 30px;
+        width: 184px;
+        text-align: center;
+        color: $white-color;
+        border-bottom: 0;
+
+        &:hover {
+            background: rgba(0, 172, 193, .7);
+            border-bottom: 0;
+            color: $white-color !important;
+        }
+    }
+
+
+
+}
+
+
+/*-----------header css end here ----------*/
+
+
+
+.location {
+    background-color: #fff;
+    position: fixed;
+    right: -185px;
+    top: 30%;
+    z-index: 999;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d4dee5;
+    border-radius: 30px 0px 0px 30px;
+
+    @include lg {
+        top: 13.5%;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin: 0;
+        padding: 5px;
+        padding-left: 8px;
+    }
+
+    span {
+        margin-left: 6px;
+    }
+
+    &:hover {
+        right: 0;
+    }
+}
+
+
+
+/* ---smooth scrolling css beginning here---- */
+
+.slideSmooth {
+    visibility: hidden;
+}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+/* smooth scrolling css end here */
+
+
+
+
+
+
+/*-----------main container wrapper css beginning here ----------*/
+.container-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5%;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+
+        @include md {
+            font-size: 30px;
+        }
+
+        @include sm {
+            font-size: 7vw;
+        }
+    }
+
+    .heading-wp {
+        margin: 0;
+        padding: 0;
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+
+            &::after {
+                display: block;
+                height: 6px;
+                width: 65px;
+                margin: 0;
+                content: "";
+                background-color: #6098ce;
+                transform: skew(-36deg);
+                -webkit-transform: skew(-36deg);
+            }
+        }
+    }
+
+    .services-container-flex {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 20px;
+        margin-left: -10px;
+        margin-right: -10px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .items {
+        width: 33.33%;
+        padding: 10px;
+
+        @include md {
+            width: 50%;
+        }
+
+        @include xsm {
+            width: 100%;
+        }
+    }
+
+    .card-wp {
+        /*box-shadow: 0px 0 6px 2px rgba(212,222,229,0.4);
+        -webkit-box-shadow: 0px 0 6px 2px rgba(212,222,229,0.4);
+        border: 1px solid #d4dee5;*/
+        height: 100%;
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+        /*border: solid 1px red;*/
+    }
+
+    .image-top {
+        margin: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+    }
+
+    figure {
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+    }
+
+    .zoom img {
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .zoom:hover img {
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .content-wp {
+        padding: 30px 25px;
+        position: relative;
+        h2 {
+            font-size: 24px;
+            color: $secondary-color;
+            margin-bottom: 12px;
+
+            @include lg {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            color: #707880;
+            color: rgba(0, 0, 0, .6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .read-more span {
+            display: inline-block;
+            margin-left: 5px;
+            -webkit-transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            -ms-transition: all 0.8s;
+            -o-transition: all 0.8s;
+            transition: all 0.8s;
+            /*&:hover{
+                margin-left: 15px;
+            }*/
+        }
+
+        .read-more:hover span {
+            margin-left: 10px;
+        }
+
+    }
+
+
+
+
+
+}
+
+
+
+/* --- buttons css beginning here --- */
+
+button.btn-primary {
+    background: $primary-color;
+    text-transform: uppercase;
+    border: solid 2px $primary-color;
+
+
+    &:hover {
+        background: $white-color;
+        color: $primary-color;
+        border: solid 2px $primary-color;
+    }
+}
+
+.btn-flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    padding-top: 20px;
+
+    @include xsm {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-top: 12px;
+    }
+}
+
+button.btn {
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: lighter;
+    align-items: center;
+}
+
+button.primary-btn {
+    background: $light-red;
+    font-size: 18px;
+    color: $white-color;
+    padding: 10px 24px;
+    border: solid 1px $light-red;
+
+    &:hover {
+        background: $white-color;
+        color: $light-red;
+    }
+
+    @include xsm {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+button.btn-youTube {
+    background: $white-color;
+    font-size: 18px;
+    color: $menu-color-mobile;
+    padding: 10px 22px;
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+
+    &:hover {
+        background: $grey-color;
+        color: $black-color;
+    }
+
+    img {
+        margin-right: 12px;
+    }
+
+    @include xsm {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1.25rem;
+        justify-content: center;
+        padding: 10px;
+    }
+}
+
+button.red-btn {
+    background: $light-red;
+    color: $white-color;
+    font-size: 1.125rem;
+    margin-bottom: 0;
+    padding: 10px 24px;
+    border: solid 1px $light-red;
+
+    &:hover {
+        background: $white-color;
+        color: $light-red;
+    }
+}
+
+/* --- buttons css end here --- */
+
+
+
+
+.mt-103 {
+    margin-top: 103px;
+    @include sm {
+        margin-top: 174px;
+    }
+}
+
+/*-----------main container wrapper css end here ----------*/
+
+.our-clients-container {
+    width: 100%;
+    background-color: #e6e6e6;
+    background-color: #edf2f5;
+    padding: 10% 5%;
+
+    .container-inner {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+            font-size: 24px;
+            color: $secondary-color;
+            font-style: normal;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 20px;
+
+            &::after {
+                display: block;
+                height: 6px;
+                width: 50px;
+                margin: 0;
+                content: "";
+                background-color: #6098ce;
+                transform: skew(-36deg);
+                -webkit-transform: skew(-36deg);
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: -ms-flexbox;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: justify;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            // @include cusxsm{
+            //     margin:0 -15px;
+            // }
+            li {
+                list-style: none;
+                width: 20%;
+                vertical-align: middle;
+                padding: 30px 15px;
+                text-align: left;
+
+                @include cusxsm {
+                    width: 50%;
+                }
+
+                a {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                    border-radius: 8px;
+
+                    &:hover {
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.paying-online-wp {
+    background: $white-color;
+    width: 100%;
+    padding: 5%;
+    margin: 0;
+
+    .container-inner-flex {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        @include md {
+            -ms-flex-direction: column;
+            flex-direction: column;
+            // padding: 30px 15px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            line-height: 1.4;
+            color: $menu-color-mobile;
+            font-style: normal;
+            font-weight: lighter;
+            margin: 0;
+            @include sm {
+                font-size: 1.45rem;
+            }
+
+            @include cusxsm {
+                font-size: 5.5vw;
+            }
+        }
+
+        button.primary-btn {
+            margin-left: 15px;
+
+            @include md {
+                margin-left: 0px;
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
+
+.body-gb {
+    background: $body-bg;
+}
+
+
+/* --- Footer css beginning here --- */
+
+.footer-wrapper {
+    width: 100%;
+    margin: 0;
+    background: $btn-hover-dark;
+    padding: 5%;
+    padding-bottom: 20px;
+    .footer-container-inner {
+        width: 100%;
+        /*padding: 0px 15px;*/
+        margin: 0 auto;
+    }
+
+    .container-menu-flex {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+
+        @include md {
+            flex-wrap: wrap;
+        }
+
+        div {
+            width: 25%;
+            padding-right: 20px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            @include md {
+                width: 50%;
+            }
+            /*@include sm{
+                width:50%;
+            }*/
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: $white-color;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        ul.footerMenu {
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+            li {
+                list-style: none;
+                a {
+                    display: block;
+                    color: $silver-color;
+                    font-size: .875rem;
+                    padding: 5px 0;
+                    &:hover {
+                        color: $white-color;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        ul.footer-social {
+            padding: 0;
+            margin: 10px 0 20px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            li {
+                list-style: none;
+                margin-right: 14px;
+                width: 30px;
+                height: 30px;
+                border: 0;
+
+                a {
+                    display: flex;
+                    color: $white-color;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    padding: 0;
+                    border: 0;
+                    opacity: 0.7;
+
+                    &:hover {
+                        opacity: 1;
+                        text-decoration: none;
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                i.fa {
+                    font-size: 20px;
+                    padding: 5px 10px;
+                }
+
+                i.fa-facebook-f {
+                    font-size: 20px;
+
+                    &:hover {
+                        color: $fb-color;
+                    }
+                }
+
+                i.fa-twitter {
+                    font-size: 22px;
+
+                    &:hover {
+                        color: $tw-color;
+                    }
+                }
+
+                i.fa-linkedin {
+                    font-size: 22px;
+
+                    &:hover {
+                        color: $in-color;
+                    }
+                }
+
+                i.fa-instagram {
+                    font-size: 22px;
+
+                    &:hover {
+                        color: $instagram-color;
+                    }
+                }
+
+                i.fa-envelope {
+                    font-size: 22px;
+
+                    &:hover {
+                        color: $mail-color;
+                    }
+                }
+
+                i.fa-whatsapp {
+                    font-size: 22px;
+
+                    &:hover {
+                        color: $whatsapp-color;
+                    }
+                }
+
+                img {
+                    border: 0;
+                }
+            }
+
+            li.facebook-bg {
+                background: $fb-color;
+
+            }
+
+            li.twitter-bg {
+                background: $tw-color;
+            }
+
+            li.youtube-bg {
+                background: $ytube-color;
+            }
+        }
+
+        .powered-wp {
+            margin: 0;
+
+            img {
+                margin-top: 5px;
+                margin-left: auto;
+                display: block;
+                width: 150px;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .footer-text-flex {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: flex-start;
+        padding: 0px;
+
+        @include md {
+            flex-direction: column;
+        }
+
+        .items-text {
+            width: 84%;
+            display: flex;
+            align-items: center;
+            @include md {
+                width: 100%;
+            }
+            p {
+                font-size: 12px;
+                color: $silver-color-2;
+                font-style: normal;
+                font-weight: 100;
+                line-height: 21.4px;
+                margin: 0;
+            }
+        }
+
+        .items-logo {
+            width: 16%;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: justify;
+            justify-content: flex-end;
+            -ms-flex-align: center;
+            align-items: flex-end;
+
+            @include md {
+                width: 100%;
+                padding-top: 25px;
+            }
+
+            img {
+                width: 130px;
+            }
+        }
+    }
+
+}
+
+/* --- Footer css end here --- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pt-50 {
+    padding-top: 50px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+
+
+
+
+
+
+.mt-200 {
+    margin-top: 200px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-40 {
+    margin-top: 30px;
+}
+
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+
+/*-----------container inner wrapper css beginning here ----------*/
